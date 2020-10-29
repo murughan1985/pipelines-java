@@ -45,7 +45,7 @@ stages:
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
 
-- stage: Deploy-to-Dev
+- stage: DeployToDev
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
@@ -67,7 +67,7 @@ stages:
               appName: $(webAppName)
               package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
 
-- stage: Deploy-to-QA
+- stage: DeployToQA
   displayName: Deploy stage
   dependsOn: Build
   condition: succeeded()
