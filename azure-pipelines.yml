@@ -46,7 +46,7 @@ stages:
       artifact: drop
 
 - stage: DeployToDev
-  displayName: Deploy stage
+  displayName: Deploy to Dev
   dependsOn: Build
   condition: succeeded()
   jobs:
@@ -68,7 +68,7 @@ stages:
               package: '$(Pipeline.Workspace)/drop/**/target/*.?(war|jar)'
 
 - stage: DeployToQA
-  displayName: Deploy stage
+  displayName: Deploy to QA 
   dependsOn: Build
   condition: succeeded()
   jobs:
