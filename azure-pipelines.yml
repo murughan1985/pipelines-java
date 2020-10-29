@@ -34,7 +34,14 @@ stages:
       displayName: 'Maven Package'
       inputs:
         mavenPomFile: 'pom.xml'
+    - task: SonarQubePrepare@4
+      inputs:
+        SonarQube: 'sonarcloud'
+        scannerMode: 'MSBuild'
+        projectKey: 'ossdaysjava'
+        projectName: 'ossdaysjava'
 
+    - task: SonarQubeAnalyze@4
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
