@@ -37,9 +37,7 @@ stages:
     - task: SonarQubePrepare@4
       inputs:
         SonarQube: 'sonarcloud'
-        scannerMode: 'MSBuild'
-        projectKey: 'ossdaysjava'
-        projectName: 'ossdaysjava'
+        scannerMode: 'Other'
 
     - task: SonarQubeAnalyze@4
     - task: CopyFiles@2
